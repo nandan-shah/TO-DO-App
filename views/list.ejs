@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
-</head>
+<%- include("header"); -%>
 <body>
     <div class="box" id="heading">
-        <h1> <%= todayDay %></h1>
+        <h1> <%= listTitle %></h1>
     </div>
     <div class="box">
             <% for (var i = 0; i <newItem.length; i++) { %>
@@ -19,10 +11,7 @@
              <% }%>
              <form class="item" action='/' method="post">
                 <input type="text" name="next_item" autocomplete="off" placeholder="New Item" required>
-                <button type="submit" name="button">+</button>
+                <button type="submit" name="listType" value="<%-listTitle%>">+</button>
             </form>
     </div>
-
-   
-</body>
-</html>
+    <%- include("footer"); -%>
